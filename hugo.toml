@@ -1,0 +1,55 @@
+baseURL = 'https://halibut205.github.io/Halibut_ONAP_Solution_Research/'
+languageCode = 'vi-VN'
+title = 'Halibut - ONAP Research'
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[params]
+  env = "production"
+  description = "Ghi chép nghiên cứu và triển khai ONAP"
+  author = "Halibut"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  disableSpecial1stPost = false
+  mainSections = ["Deploy ONAP", "Kiến Trúc ONAP"]
+
+[params.homeInfoParams]
+  Title = "ONAP Research"
+  Content = "Tài liệu nghiên cứu kiến trúc và triển khai ONAP"
+
+[[menu.main]]
+  identifier = "deploy"
+  name = "Deploy ONAP"
+  url = "/deploy-onap/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "architecture"
+  name = "Kiến trúc ONAP"
+  url = "/kiến-trúc-onap/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  url = "/archives/"
+  weight = 40
