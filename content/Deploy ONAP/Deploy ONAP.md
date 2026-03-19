@@ -1,7 +1,6 @@
 ---
-title: "PoC ONAP"
+title: PoC ONAP
 date: 2026-03-18
-draft: false
 ---
 
 ### Mục tiêu: Triển khai PoC vFWNG bằng ONAP
