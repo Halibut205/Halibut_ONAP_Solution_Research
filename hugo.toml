@@ -1,6 +1,6 @@
 baseURL = 'https://halibut205.github.io/Halibut_ONAP_Solution_Research/'
 languageCode = 'vi-VN'
-title = 'ONAP Research'
+title = 'What The Frick is ONAP'
 theme = "PaperMod"
 
 [pagination]
@@ -45,7 +45,7 @@ theme = "PaperMod"
   url = "https://reddit.com"
 
 [params.homeInfoParams]
-  Title = "ONAP Research"
+  Title = "What The Frick is ONAP"
   Content = "Tài liệu nghiên cứu kiến trúc và triển khai ONAP"
 
 [[menu.main]]
