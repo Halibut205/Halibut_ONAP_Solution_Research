@@ -24,10 +24,11 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   disableSpecial1stPost = false
-  disableHomePosts = true
-  mainSections = ["deploy-onap", "kiến-trúc-onap"]
+  disableHomePosts = false
+  mainSections = ["triển-khai-onap", "kiến-trúc-onap"]
   hideFooter = false
   ShowBreadCrumbs = true
+
 
 [[params.socialIcons]]
   name = "x"
@@ -58,7 +59,7 @@ theme = "PaperMod"
 [[menu.main]]
   identifier = "deploy"
   name = "Triển Khai"
-  url = "/deploy-onap/"
+  url = "/triển-khai-onap/"
   weight = 20
 
 [[menu.main]]
