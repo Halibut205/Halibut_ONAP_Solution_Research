@@ -1,6 +1,7 @@
 ---
 title: Architecture
 date: 2026-03-18
+draft: "false"
 ---
 
 ONAP là một bộ sưu tập các giải pháp tự động hóa mạng. Những giải pháp này bao gồm điều phối, quản lý và tự động hóa
