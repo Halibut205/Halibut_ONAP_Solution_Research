@@ -1,6 +1,6 @@
 baseURL = 'https://halibut205.github.io/Halibut_ONAP_Solution_Research/'
 languageCode = 'vi-VN'
-title = 'Halibut - ONAP Research'
+title = 'ONAP Research'
 theme = "PaperMod"
 
 [pagination]
@@ -29,9 +29,3 @@ theme = "PaperMod"
 [params.homeInfoParams]
   Title = "ONAP Research"
   Content = "Tài liệu nghiên cứu kiến trúc và triển khai ONAP"
-
-[[menu.main]]
-  identifier = "posts"
-  name = "Bài viết"
-  url = "/"
-  weight = 10
