@@ -2,6 +2,7 @@ baseURL = 'https://halibut205.github.io/Halibut_ONAP_Solution_Research/'
 languageCode = 'vi-VN'
 title = 'Halibut'
 theme = "PaperMod"
+staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
 
 [pagination]
   pagerSize = 10
