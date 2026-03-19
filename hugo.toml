@@ -29,3 +29,21 @@ theme = "PaperMod"
 [params.homeInfoParams]
   Title = "ONAP Research"
   Content = "Tài liệu nghiên cứu kiến trúc và triển khai ONAP"
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Bài viết"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "deploy"
+  name = "Triển Khai"
+  url = "/deploy-onap/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "architecture"
+  name = "Kiến trúc"
+  url = "/kiến-trúc-onap/"
+  weight = 30
