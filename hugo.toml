@@ -24,7 +24,7 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   disableSpecial1stPost = false
-  mainSections = ["Deploy ONAP", "Kiến Trúc ONAP"]
+  mainSections = ["deploy-onap", "kiến-trúc-onap"]
 
 [params.homeInfoParams]
   Title = "ONAP Research"
