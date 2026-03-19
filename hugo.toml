@@ -13,6 +13,6 @@ theme = 'PaperMod'
 
 # Hiển thị phần giới thiệu ở ngay trang chủ
 [params.profileMode]
-  enabled = true
+  enabled = false
   title = "Halibut's ONAP Workspace"
   subtitle = "Tài liệu nghiên cứu, cấu hình và triển khai kiến trúc ONAP."
