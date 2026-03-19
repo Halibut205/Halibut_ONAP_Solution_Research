@@ -3,10 +3,9 @@ title: Architecture
 date: 2026-03-18
 draft: "false"
 ---
+ONAP là một bộ sưu tập các giải pháp tự động hóa mạng. Trong đó, những giải pháp này sẽ bao gồm công việcđiều phối, quản lý và tự động hóa.
 
-ONAP là một bộ sưu tập các giải pháp tự động hóa mạng. Những giải pháp này bao gồm điều phối, quản lý và tự động hóa
-
-Thử thách mà ONAP đặt ra là giúp đỡ các nhà vận hành mạng:
+Thử thách mà ONAP đặt ra đó là giúp đỡ các nhà vận hành mạng:
 
 - Quản lý quy mô và chi phí của những thay đổi thủ công khi cần triển khai các dịch vụ mới.
 - Tận dụng SDN và NFV để đẩy nhanh tốc độ cung cấp dịch vụ.
@@ -44,7 +43,7 @@ Quá trình tinh gọn này hướng tới mục đích:
 
 ![image 2.png](../../image%202.png)
 
-### 1. Phần thiết kế (Design-time)
+### 1. SDC (Service Design and Creation)
 
 ONAP cung cấp hẳn một hệ thống đồ sộ là **SDC (Service Design and Creation)** để các kỹ sư thiết kế, đóng gói và thử nghiệm các dịch vụ mạng trước khi thực sự triển khai vào môi trường Production
 
@@ -67,7 +66,7 @@ Thành phần của ONAP Design-time bao gồm
 
 Tiếp thoe là thuật ngữ Service Design:
 
-Các xNF đứng một mình không tạo ra giá trị cho người dùng, ta cần phải lắp ráp nhiều xNF lại với nhau, cấu hình mạng (network, subnet, IP, …) và thiết lập policies để tạo ra một hệ thống hoàn chỉnh
+Các xNF đứng một mình không tạo ra giá trị cho người dùng, ta cần phải tập hợp nhiều xNF lại với nhau, cấu hình mạng (network, subnet, IP, …) và thiết lập policies để tạo ra một hệ thống hoàn chỉnh.
 
 ⇒ Service/xNF Design là quá trình mô hình hóa, định nghĩa kiến trúc và tạo ra các bản thiết kế cho các dịch vụ mạng trước khi được đưa vào triển khai thực tế.
 
@@ -77,7 +76,7 @@ Các xNF đứng một mình không tạo ra giá trị cho người dùng, ta c
 
 Trước khi được đưa vào production, người quản trị cần phải kiểm tra chức năng mạng trên có ảnh hưởng tới hệ thống thực tế không.
 
-- Đầu vào sẽ là một gói VPS (Vendor Software Product)
+- Đầu vào sẽ là một gói **VPS (Vendor Software Product)**
     - Gói này sẽ chứa toàn bộ những thứ liên quan tới chức năng mạng đó
     - Với CNF, gói này sẽ thường chứa Helm Charts, một trình quản lý gói, các tệp cấu hình YAML K8s, các đường dẫn tới các Docker Images
     - Với VNF, Gói này chứa các **HEAT templates** (để tạo máy ảo trên OpenStack) và các file image hệ điều hành (như qcow2).
@@ -89,3 +88,4 @@ Trước khi được đưa vào production, người quản trị cần phải 
 2. Translation 
 3. Enrichment
 4. Certification
+

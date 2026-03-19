@@ -33,7 +33,7 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
 
 [[params.socialIcons]]
   name = "x"
-  url = "https://x.com"
+  url = "https://x.com/Minhc46660281"
 
 [[params.socialIcons]]
   name = "github"
@@ -41,11 +41,11 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
 
 [[params.socialIcons]]
   name = "linkedin"
-  url = "https://linkedin.com"
+  url = "https://www.linkedin.com/in/duc-pham-0a97572a2/"
 
 [[params.socialIcons]]
   name = "reddit"
-  url = "https://reddit.com"
+  url = "https://www.reddit.com/user/FactorFit/"
 
 [params.homeInfoParams]
   Title = "What The Frick is ONAP"
