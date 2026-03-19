@@ -18,7 +18,7 @@ Kiến trúc của ONAP dựa trên một mô hình lý thuyết tiêu chuẩn, 
 
 nói một cách dễ hiểu ETSI NFV là bản vẽ kiến trúc tiêu chuẩn lý thuyết, còn ONAP là một phần mềm mã nguồn mở thực tế đã hiện thực hóa bản vẽ đó (và thậm chí còn làm được nhiều hơn thế).
 
-![image.png](Halibut_ONAP_Solution_Research/image.png)
+![image.png](../../image.png)
 
 Kiến trúc của ONAP có thể được chia làm 3 phần:
 
@@ -26,7 +26,7 @@ Kiến trúc của ONAP có thể được chia làm 3 phần:
 - Phần triển khai (Run Time)
 - Phần quản lý (OOM)
 
-![image 1.png](Halibut_ONAP_Solution_Research/image%201.png)
+![image 1.png](../../image%201.png)
 
 ## Quá trình tinh gọn
 
@@ -42,7 +42,7 @@ Quá trình tinh gọn này hướng tới mục đích:
 
 ## Kiến trúc chi tiết
 
-![image 2.png](Halibut_ONAP_Solution_Research/image%202.png)
+![image 2.png](../../image%202.png)
 
 ### 1. Phần thiết kế (Design-time)
 
@@ -63,7 +63,7 @@ Thành phần của ONAP Design-time bao gồm
 - VNF (Virtual Network Function): Chức năng ảo hóa, chạy trên các máy ảo, với thiết bị là các máy tính có kiến trúc tập lệnh 64 bit.
 - CNF (Containerized/Cloud-native Network Function) chạy trên các Container
 
-![image 3.png](Halibut_ONAP_Solution_Research/image%203.png)
+![image 3.png](../../image%203.png)
 
 Tiếp thoe là thuật ngữ Service Design:
 
