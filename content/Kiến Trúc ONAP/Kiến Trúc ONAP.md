@@ -126,4 +126,4 @@ Các chức năng mạng sau khi vượt qua quá trình Onboard - Validation s�
 
 ### 2. UUI (Usecase User Interface)
 
-![image 3.png](../../image%204.png)
+![image 4.png](../../image%204.png)
