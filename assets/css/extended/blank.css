@@ -1,3 +1,29 @@
+.post-layout {
+	display: grid;
+	grid-template-columns: 280px minmax(0, 1fr);
+	gap: 24px;
+	align-items: start;
+}
+
+.post-toc-sidebar {
+	position: sticky;
+	top: 80px;
+}
+
+.post-toc-sidebar .toc {
+	margin: 0;
+}
+
+@media (max-width: 1024px) {
+	.post-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.post-toc-sidebar {
+		position: static;
+		order: -1;
+	}
+}
 /*
 This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
 
