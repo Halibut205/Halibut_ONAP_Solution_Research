@@ -15,6 +15,12 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
   category = "categories"
   series = "series"
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
 [params]
   env = "production"
   description = "Ghi chép nghiên cứu và triển khai ONAP"
@@ -22,6 +28,7 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
   defaultTheme = "auto"
   ShowToc = true
   TocOpen = true
+  UseHugoToc = true
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
