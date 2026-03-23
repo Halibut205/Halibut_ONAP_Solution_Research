@@ -18,7 +18,7 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
 [markup]
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 3
+    endLevel = 4
     ordered = false
 
 [params]
