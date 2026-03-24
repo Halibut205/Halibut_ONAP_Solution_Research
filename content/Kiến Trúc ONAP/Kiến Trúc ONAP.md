@@ -156,7 +156,7 @@ UUI bao gồm hai module:
 
 ### 4. SO (Service Orchestration) 
 
-![[Pasted image 20260322120607.png]]
+![image 3.png](../../image%205.png)
 
 **SO (Service Orchestrator)** giống như ông quản đốc trong một công trình xây dựng. Chuyên môn của module này là "chỉ tay năm ngón" và quản lý tiến độ.
 

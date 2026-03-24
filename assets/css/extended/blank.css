@@ -1,18 +1,4 @@
-.post-layout {
-	display: block;
-}
-
-
-/* Debug: show boundaries for all elements (temporary) */
-* {
-	outline: 1px solid rgba(255, 0, 0, 0.35) !important;
-}
-.main:has(.post-single.has-left-toc) {
-	max-width: none;
-	padding-left: 0;
-	padding-right: 0;
-}
-
+/* Left TOC Sidebar - Fixed Position */
 .left-toc-dock {
 	position: fixed;
 	left: 0;
@@ -21,7 +7,6 @@
 	height: calc(100vh - 62px);
 	padding: 0;
 	z-index: 20;
-	border-right: 1px solid var(--border);
 	background: var(--theme);
 }
 
@@ -71,24 +56,49 @@
 	color: var(--primary);
 }
 
-.post-layout .post-content {
-	max-width: 1120px;
+/* Post Layout with Left TOC */
+.main:has(.post-single.has-left-toc) {
+	max-width: none;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .post-single.has-left-toc {
 	max-width: none;
-	width: calc(100vw - 300px);
+	width: calc(100vw - 280px);
 	margin-left: 280px;
-	padding-left: 28px;
-	padding-right: 28px;
+	padding-left: 32px;
+	padding-right: 40px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .post-single.has-left-toc .post-header,
 .post-single.has-left-toc .post-layout,
 .post-single.has-left-toc .post-footer {
+	width: 100%;
 	max-width: 1120px;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
+.post-single.has-left-toc .post-header {
+	margin-top: 24px;
+}
+
+.post-layout {
+	display: block;
+}
+
+.post-layout .post-content {
+	max-width: 100%;
+}
+
+/* Mobile Responsive - TOC becomes static block */
 @media (max-width: 1024px) {
 	.left-toc-dock {
 		position: static;
@@ -96,22 +106,16 @@
 		height: auto;
 		padding: 0;
 		margin-bottom: 14px;
-		border-right: 0;
 		background: transparent;
 	}
 
 	.left-toc-dock .toc {
 		background: var(--entry);
-		border: 1px solid var(--border);
 		border-radius: 10px;
 	}
 
 	.left-toc-dock .toc .inner {
 		max-height: none;
-	}
-
-	.post-layout .post-content {
-		max-width: 100%;
 	}
 
 	.post-single.has-left-toc {
@@ -127,10 +131,8 @@
 		padding-left: var(--gap);
 		padding-right: var(--gap);
 	}
+
+	.post-layout .post-content {
+		max-width: 100%;
+	}
 }
-
-/*
-This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
-
-Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
-*/
