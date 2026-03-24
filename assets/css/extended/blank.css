@@ -2,56 +2,91 @@
 	display: block;
 }
 
+
+/* Debug: show boundaries for all elements (temporary) */
+* {
+	outline: 1px solid rgba(255, 0, 0, 0.35) !important;
+}
+.main:has(.post-single.has-left-toc) {
+	max-width: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .left-toc-dock {
 	position: fixed;
 	left: 0;
 	top: 62px;
-	width: 280px;
+	width: 260px;
 	height: calc(100vh - 62px);
-	padding: 12px;
+	padding: 0;
 	z-index: 20;
+	border-right: 1px solid var(--border);
+	background: var(--theme);
 }
 
 .left-toc-dock .toc {
 	margin: 0;
 	height: 100%;
-	padding: 14px;
-	border-right: 1px solid;
-	border: 1px solid;
-	border-radius: 0;
-	background: var(--entry);
+	padding: 18px 14px 14px;
+	background: transparent;
+	overflow-x: hidden;
 }
 
 .left-toc-dock .toc-title {
-	font-size: 0.95rem;
+	font-size: 0.82rem;
 	font-weight: 700;
-	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin-bottom: 12px;
 	color: var(--primary);
 }
 
 .left-toc-dock .toc .inner {
-	max-height: calc(100vh - 150px);
+	max-height: calc(100vh - 120px);
 	overflow: auto;
-	font-size: 0.92rem;
+	overflow-x: hidden;
+	font-size: 0.9rem;
+	line-height: 1.45;
 	padding-right: 4px;
 }
 
 .left-toc-dock .toc ul {
 	margin: 0;
-	padding-left: 1rem;
+	padding-left: 0.85rem;
 }
 
 .left-toc-dock .toc li {
-	margin: 0.35rem 0;
+	margin: 0.28rem 0;
+}
+
+.left-toc-dock .toc a {
+	color: var(--secondary);
+	text-decoration: none;
+	word-break: break-word;
+	overflow-wrap: anywhere;
+}
+
+.left-toc-dock .toc a:hover {
+	color: var(--primary);
 }
 
 .post-layout .post-content {
-	max-width: 780px;
+	max-width: 1120px;
 }
 
 .post-single.has-left-toc {
-	max-width: 900px;
-	margin-left: 300px;
+	max-width: none;
+	width: calc(100vw - 300px);
+	margin-left: 280px;
+	padding-left: 28px;
+	padding-right: 28px;
+}
+
+.post-single.has-left-toc .post-header,
+.post-single.has-left-toc .post-layout,
+.post-single.has-left-toc .post-footer {
+	max-width: 1120px;
 }
 
 @media (max-width: 1024px) {
@@ -61,9 +96,13 @@
 		height: auto;
 		padding: 0;
 		margin-bottom: 14px;
+		border-right: 0;
+		background: transparent;
 	}
 
 	.left-toc-dock .toc {
+		background: var(--entry);
+		border: 1px solid var(--border);
 		border-radius: 10px;
 	}
 
@@ -76,10 +115,20 @@
 	}
 
 	.post-single.has-left-toc {
+		width: auto;
 		max-width: var(--main-width);
 		margin-left: auto;
+		padding-left: var(--gap);
+		padding-right: var(--gap);
+	}
+
+	.main:has(.post-single.has-left-toc) {
+		max-width: calc(var(--main-width) + var(--gap) * 2);
+		padding-left: var(--gap);
+		padding-right: var(--gap);
 	}
 }
+
 /*
 This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
 
