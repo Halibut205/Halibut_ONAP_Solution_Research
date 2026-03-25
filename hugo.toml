@@ -35,7 +35,7 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
   ShowCodeCopyButtons = true
   disableSpecial1stPost = false
   disableHomePosts = false
-  mainSections = ["triển-khai-onap", "kiến-trúc-onap"]
+  mainSections = ["triển-khai-onap", "kiến-trúc-onap", "base-knowledge"]
   hideFooter = false
   ShowBreadCrumbs = true
 
