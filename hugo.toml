@@ -18,7 +18,9 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]
-      mark = true
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3

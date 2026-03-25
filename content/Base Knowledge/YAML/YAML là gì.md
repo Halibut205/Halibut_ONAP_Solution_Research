@@ -28,4 +28,10 @@ class Student:
 
 Trong trường hợp ta muốn **tự khai báo** một ==kiểu dữ liệu== của riêng mình, đây chính là cách ta khai báo nó trong Python và nhiều loại ngôn ngữ lập trình khác.
 
+Sau đó, ta có thể tạo ra `object` từ kiểu dữ liệu trên:
+
+```python
+sv1 = Student("Nguyễn Văn A", "SV12345")
+```
+
 
