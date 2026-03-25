@@ -3,7 +3,7 @@ title: Architecture
 date: 2026-03-18
 draft: "false"
 ---
-ONAP là một bộ sưu tập các giải pháp tự động hóa mạng. Trong đó, những giải pháp này sẽ bao gồm công việc điều phối, quản lý và tự động hóa.
+**ONAP** là một bộ sưu tập các giải pháp tự động hóa mạng. Trong đó, những giải pháp này sẽ bao gồm công việc điều phối, quản lý và tự động hóa.
 
 Thử thách mà ONAP đặt ra đó là giúp đỡ các nhà vận hành mạng:
 
@@ -156,7 +156,7 @@ UUI bao gồm hai module:
 
 ### 4. SO (Service Orchestration) 
 
-![image 3.png](../../image%205.png)
+![image 3.png](../../image%204.png)
 
 **SO (Service Orchestrator)** giống như ông quản đốc trong một công trình xây dựng. Chuyên môn của module này là "chỉ tay năm ngón" và quản lý tiến độ.
 

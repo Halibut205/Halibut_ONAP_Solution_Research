@@ -57,7 +57,7 @@ staticDir = ['static', 'content/Kiến Trúc ONAP/Image']
   url = "https://www.reddit.com/user/FactorFit/"
 
 [params.homeInfoParams]
-  Title = "What the _____ is ONAP"
+  Title = "What _____ is ONAP"
   Content = "Tài liệu nghiên cứu kiến trúc và triển khai ONAP"
 
 [[menu.main]]
