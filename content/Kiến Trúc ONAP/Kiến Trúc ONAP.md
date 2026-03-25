@@ -17,7 +17,7 @@ Kiến trúc của ONAP dựa trên một mô hình lý thuyết tiêu chuẩn, 
 
 nói một cách dễ hiểu ETSI NFV là bản vẽ kiến trúc tiêu chuẩn lý thuyết, còn ONAP là một phần mềm mã nguồn mở thực tế đã hiện thực hóa bản vẽ đó (và thậm chí còn làm được nhiều hơn thế).
 
-![image.png](../../image.png)
+![image.png](image.png)
 
 Kiến trúc của ONAP có thể được chia làm 3 phần:
 
