@@ -19,11 +19,11 @@ các biến x, y, z này được gọi là một `object`, đơn giản là m�
 
 Cho đoạn code Python như sau:
 
-```
-class Student: 
-	def __init__(self, name, id):
-		self.name = name
-		self.id = id
+```python
+class Student:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
 ```
 
 Trong trường hợp ta muốn **tự khai báo** một ==*kiểu dữ liệu*== của riêng mình, đây chính là cách ta khai báo nó trong Python và nhiều loại ngôn ngữ lập trình khác.
