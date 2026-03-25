@@ -8,12 +8,12 @@ date: 2026-02-05
 
 Bình thường ta thường thấy:
 
-Số nguyên `int` -> lưu trữ số nguyên.
-Số thực `float` -> lưu trữ số thực.
+Số nguyên `int` → lưu trữ số nguyên.
+Số thực `float` → lưu trữ số thực.
 
-Trong Python hay trong nhiều ngôn ngữ lập trình khác, đây chính là một ==*kiểu dữ liệu*== đã được định nghĩa sẵn trong hệ thống.
+Trong Python hay trong nhiều ngôn ngữ lập trình khác, đây chính là một ==kiểu dữ liệu== đã được định nghĩa sẵn trong hệ thống.
 
-Khi đó, ta có thể tạo ra các ==*biến*== với kiểu dữ liệu này. Nó sẽ được sử dụng để lưu trữ giá trị nào đó, ví dụ `int x = 2`, `int y = 3` hay `float z = 1.2`.
+Khi đó, ta có thể tạo ra các ==biến== với kiểu dữ liệu này. Nó sẽ được sử dụng để lưu trữ giá trị nào đó, ví dụ `int x = 2`, `int y = 3` hay `float z = 1.2`.
 
 các biến x, y, z này được gọi là một `object`, đơn giản là một thứ mà ta có thể tương tác vào. bằng các phương thức. Ví dụ, `a=x+y` .
 
@@ -26,6 +26,6 @@ class Student:
         self.id = id
 ```
 
-Trong trường hợp ta muốn **tự khai báo** một ==*kiểu dữ liệu*== của riêng mình, đây chính là cách ta khai báo nó trong Python và nhiều loại ngôn ngữ lập trình khác.
+Trong trường hợp ta muốn **tự khai báo** một ==kiểu dữ liệu== của riêng mình, đây chính là cách ta khai báo nó trong Python và nhiều loại ngôn ngữ lập trình khác.
 
 

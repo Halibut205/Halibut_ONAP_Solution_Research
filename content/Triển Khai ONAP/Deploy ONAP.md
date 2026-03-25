@@ -41,7 +41,7 @@ ONAP được xây dựng theo kiến trúc Microservices, đa phần các servi
 
 Vậy có phải mỗi dịch vụ của ONAP sẽ chạy trên một [pod](https://vietnix.vn/kubernetes-pod/?utm_source=ggads&utm_medium=pmax&utm_campaign={CampaignName}&p=&gad_source=1&gad_campaignid=23234186547&gclid=Cj0KCQjwj47OBhCmARIsAF5wUEFp4849a2zZ0Ds1N8SD0dvlSH8i__ZEpE0tc89VBwMu-fvGpuCJ4o8aAkf_EALw_wcB) không?
 
--> Về cơ bản, mỗi Microservice (như `so-bpmn-infra`, `sdnc-ansible-server`, `aai-resources`) sẽ chạy trong ít nhất trong một Pod riêng biệt. Tuy nhiên, **một component lớn bao gồm nhiều pod** như SDC sẽ là một cụm gồm: `sdc-be` (Backend), `sdc-fe` (Frontend), `sdc-cassandra`, `sdc-onboarding`.
+→ Về cơ bản, mỗi Microservice (như `so-bpmn-infra`, `sdnc-ansible-server`, `aai-resources`) sẽ chạy trong ít nhất trong một Pod riêng biệt. Tuy nhiên, **một component lớn bao gồm nhiều pod** như SDC sẽ là một cụm gồm: `sdc-be` (Backend), `sdc-fe` (Frontend), `sdc-cassandra`, `sdc-onboarding`.
 
 Với tổng cộng khoảng **36GB RAM** giữa hai máy, mình **không thể** deploy bản Full ONAP mà bắt buộc phải sử dụng chế độ ["Small/Starter" của OOM](https://github.com/onap/oom/blob/master/kubernetes/onap/resources/environments/minimal-onap.yaml) và chỉ chọn lọc các component thiết yếu cho vFWNG:
 
