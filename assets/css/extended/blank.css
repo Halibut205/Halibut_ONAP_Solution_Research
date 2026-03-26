@@ -98,6 +98,23 @@
 	max-width: 100%;
 }
 
+.post-single .post-content img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.post-content figure {
+	text-align: center;
+}
+
+.post-content figure img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Mobile Responsive - TOC becomes static block */
 @media (max-width: 1024px) {
 	.left-toc-dock {

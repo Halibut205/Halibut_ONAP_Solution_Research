@@ -45,9 +45,17 @@ sv1 = Student("Nguyễn Văn A", "SV12345")
 
 Để hiểu rõ quá trình tuần tự hóa diễn ra như thế nào, chúng ta cần nhìn vào sự khác biệt giữa cách dữ liệu tồn tại trong bộ nhớ (RAM) và cách nó tồn tại trên ổ cứng hoặc đường truyền mạng.
 
-Trong bộ nhớ máy tính, một object không phải là một khối dữ liệu liền mạch. Nó thường là một **đồ thị** phức tạp nơi các pointers tham chiếu đến các vùng nhớ khác. Trong khi đó, mạng máy tính hay ổ cứng chỉ có thể đọc và ghi dữ liệu theo một **chiều tuyến tính, một chuỗi các byte liên tục**.
+Trong bộ nhớ máy tính, một `object` không phải là một khối dữ liệu liền mạch. Nó thường là một ==đồ thị phức tạp nơi các pointers tham chiếu đến các vùng nhớ khác==. Trong khi đó, mạng máy tính hay ổ cứng chỉ có thể đọc và ghi dữ liệu theo một **chiều tuyến tính, một chuỗi các byte liên tục**.
 
-Quá trình tuần tự hóa chính là việc biến đồ thị tham chiếu không gian 3 chiều phức tạp kia thành một đường thẳng 1 chiều.
+Quá trình tuần tự hóa chính là việc biến đồ thị tham chiếu không gian 3 chiều phức tạp kia thành một đường thẳng 1 chiều. 
+
+Quá trình bắt đầu khi bạn chỉ định một `object` cụ thể cần tuần tự hóa. Trình tuần tự hóa sẽ lấy `object` này làm điểm xuất phát. Trình tuần tự hóa sẽ quét qua toàn bộ cấu trúc của `object` gốc. Nếu `object` này chứa các thuộc tính là những `object` con khác (ví dụ: `object` Customer chứa `object` Address), nó sẽ tiếp tục đi sâu vào các `object` con đó cho tới cuối cùng.
+
+Khi đi qua từng nút trong đồ thị, trình tuần tự hóa sẽ đọc các giá trị nguyên thủy (như số nguyên, chuỗi văn bản, boolean,...). Sau đó, nó ánh xạ các kiểu dữ liệu trong bộ nhớ sang ==*định dạng đích*==.
+
+## Định dạng đích
+
+
 
 
 
