@@ -10,6 +10,14 @@
     {{- with $u.Fragment -}}
       {{- $src = printf "%s#%s" $src . -}}
     {{- end -}}
+  {{- else -}}
+    {{- $src = strings.TrimPrefix "/" $u.Path | absURL -}}
+    {{- with $u.RawQuery -}}
+      {{- $src = printf "%s?%s" $src . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $src = printf "%s#%s" $src . -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 {{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy") -}}

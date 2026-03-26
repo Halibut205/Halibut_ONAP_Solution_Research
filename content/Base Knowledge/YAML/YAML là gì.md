@@ -42,3 +42,12 @@ sv1 = Student("Nguyễn Văn A", "SV12345")
 
 
 ![YAML diagram](/images/yaml/image.png)
+
+Để hiểu rõ quá trình tuần tự hóa diễn ra như thế nào, chúng ta cần nhìn vào sự khác biệt giữa cách dữ liệu tồn tại trong bộ nhớ (RAM) và cách nó tồn tại trên ổ cứng hoặc đường truyền mạng.
+
+Trong bộ nhớ máy tính, một object không phải là một khối dữ liệu liền mạch. Nó thường là một **đồ thị** phức tạp nơi các pointers tham chiếu đến các vùng nhớ khác. Trong khi đó, mạng máy tính hay ổ cứng chỉ có thể đọc và ghi dữ liệu theo một **chiều tuyến tính, một chuỗi các byte liên tục**.
+
+Quá trình tuần tự hóa chính là việc biến đồ thị tham chiếu không gian 3 chiều phức tạp kia thành một đường thẳng 1 chiều.
+
+
+
