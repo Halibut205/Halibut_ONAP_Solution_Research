@@ -3,7 +3,7 @@ title: PoC ONAP
 date: 2026-03-18
 ---
 
-## Mục tiêu: Triển khai PoC vFWNG bằng ONAP
+# Mục tiêu: Triển khai PoC vFWNG bằng ONAP
 
 Để Deploy một phiên bản demo của hệ thống ONAP, mình cần phải có một lộ trình rõ ràng để Handle số lượng Microservices khổng lồ của dự án này.
 
@@ -15,7 +15,7 @@ date: 2026-03-18
 
 [Kiến Trúc ONAP](https://halibut205.github.io/Halibut_ONAP_Solution_Research/ki%E1%BA%BFn-tr%C3%BAc-onap/ki%E1%BA%BFn-tr%C3%BAc-onap/)
 
-## Chuẩn bị tài nguyên và môi trường
+# Chuẩn bị tài nguyên và môi trường
 
 Hiện tại mình đang có 2 thiết bị
 
@@ -49,5 +49,5 @@ Với tổng cộng khoảng **36GB RAM** giữa hai máy, mình **không thể*
 - **Có thể lược bỏ:** DCAE (nếu không cần closed-loop ngay), CLAMP, Multi-VIM.
 
 
-## Thiết lập hạ tầng Kubernetes & Docker
+# Thiết lập hạ tầng Kubernetes & Docker
 

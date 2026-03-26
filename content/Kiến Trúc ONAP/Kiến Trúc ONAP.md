@@ -17,7 +17,7 @@ Kiến trúc của ONAP dựa trên một mô hình lý thuyết tiêu chuẩn, 
 
 nói một cách dễ hiểu ETSI NFV là bản vẽ kiến trúc tiêu chuẩn lý thuyết, còn ONAP là một phần mềm mã nguồn mở thực tế đã hiện thực hóa bản vẽ đó (và thậm chí còn làm được nhiều hơn thế).
 
-![image.png](image.png)
+![Architecture overview](/images/kien-truc-onap/image.png)
 
 Kiến trúc của ONAP có thể được chia làm 3 phần:
 
@@ -25,7 +25,7 @@ Kiến trúc của ONAP có thể được chia làm 3 phần:
 - Vận hành (Run Time)
 - Quản lý (Manage ONAP)
 
-![image 1.png](../../image%201.png)
+![ONAP layer model](/images/kien-truc-onap/image-1.png)
 
 ## Quá trình tinh gọn
 
@@ -40,7 +40,7 @@ Quá trình tinh gọn này hướng tới mục đích:
 
 ## Kiến trúc chi tiết
 
-![image 2.png](../../image%202.png)
+![ONAP detailed architecture](/images/kien-truc-onap/image-2.png)
 
 ### 1. SDC (Service Design and Creation)
 
@@ -65,7 +65,7 @@ Service/xNF Design là quá trình mô hình hóa, định nghĩa kiến trúc v
 - VNF (Virtual Network Function): Chức năng ảo hóa, chạy trên các máy ảo, với thiết bị là các máy tính có kiến trúc tập lệnh 64 bit.
 - CNF (Containerized/Cloud-native Network Function) chạy trên các Container
 
-![image 3.png](../../image%203.png)
+![xNF types diagram](/images/kien-truc-onap/image-3.png)
 
 Tiếp thoe là thuật ngữ Service Design:
 
@@ -138,7 +138,7 @@ Nếu nhìn vào sơ đồ tổng quát kiến trúc ONAP, ta sẽ thấy nó n�
 - Cung cấp một trình khởi chạy ứng dụng liên kết tới các giao diện người dùng của các Module khác có sẵn trong ONAP. 
 - Nó cũng cung cấp một hệ thống quản lý người dùng cho phép tạo, chỉnh sửa tài khoản cũng như vai trò (roles) của họ.
 
-![image 4.png](../../image%204.png)
+![Portal-NG and UUI architecture](/images/kien-truc-onap/image-4.png)
 
 UUI bao gồm hai module:
 - **UUI UI (Module Frontend)**, giao diện đồ họa người dùng (GUI) cho những người vận hành (ví dụ: dùng để quản lý vòng đời hay giám sát).
@@ -156,7 +156,7 @@ UUI bao gồm hai module:
 
 ### 4. SO (Service Orchestration) 
 
-![image 3.png](../../image%204.png)
+![SO service flow](/images/kien-truc-onap/image-5.png)
 
 **SO (Service Orchestrator)** giống như ông quản đốc trong một công trình xây dựng. Chuyên môn của module này là "chỉ tay năm ngón" và quản lý tiến độ.
 

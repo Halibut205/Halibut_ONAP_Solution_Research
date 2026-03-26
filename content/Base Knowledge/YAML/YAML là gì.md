@@ -41,4 +41,4 @@ sv1 = Student("Nguyễn Văn A", "SV12345")
 ## Serialization
 
 
-![image.png](image.png)
+![YAML diagram](/images/yaml/image.png)
