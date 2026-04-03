@@ -104,7 +104,7 @@ Nó cũng quản lý định nghĩa của các hoạt động nhỏ lẻ để t
 
 Vậy **workflow** là gì? Nó là một chuỗi các bước được sắp xếp theo một trình tự logic nào đó để hệ thống tự động thực hiện một hành động từ đầu tới cuối. 
 
-Hình dung mình cần triển khai một Firewall ảo. Bạn không thể vứt cục file cấu hình đó vào hệ thống rồi hi vọng nó tự chạy. Bạn cần một workflow như sau:
+Hình dung mình cần triển khai một Firewall ảo. Bạn không thể vứt cục file cấu hình đó vào hệ thống rồi hi vọng nó tự chạy. Bạn cần một workflow, ví dụ như sau:
 1. Nhận yêu cầu triển khai (Khách hàng yêu cầu tên dịch vụ, dải IP, ...).
 2. Cấp phát tài nguyên, gọi API xuống tầng ảo hóa để tạo máy ảo hoặc container cho chức năng firewall này.
 3. Chạy quy trình Rollback nếu tạo máy ảo không thành công.
@@ -112,7 +112,7 @@ Hình dung mình cần triển khai một Firewall ảo. Bạn không thể vứ
 5. Đẩy các rule mặc định vào firewall.
 6. Trả về kết quả triển khai thành công.
 
-Toàn bộ các bước trên được đóng gói lại thành một file cấu hình workflow với syntax dựa trên XML, thường có đuôi file là `.bpmn` (Business Process Model and Notation), hoặc file `.yaml`(Yet Another Model Language).
+Toàn bộ các bước trên được đóng gói lại thành một file cấu hình workflow với syntax dựa trên XML, thường có đuôi file là `.bpmn` (Business Process Model and Notation), hoặc file `.yaml`(Yet Another Model Language - Ain't Markup Language).
 
 Có thể thấy hầu hết các "hoạt động" trong một workflow có phần lặp đi lặp lại (cấp phát IP, tạo VM,...). **Workflow Design** sẽ cung cấp cho người dùng một một giao diện Web, nơi các "hoạt động" này được biểu diễn dưới dạng các khối kéo thả. Ta có thể nối các khối ấy lại với nhau bằng các mũi tên để tạo thành dòng chảy logic.
 
@@ -153,16 +153,46 @@ UUI bao gồm hai module:
 
 ### 3. Policy Framework
 
+**ONAP Policy Framework** (Khung chính sách ONAP) là một chức năng toàn diện dành cho việc thiết kế, triển khai và thực thi các chính sách.
+
+-> Đây là cuốn sổ luật của hệ thống. Bất cứ bộ phận nào trong mạng lưới muốn biết phải làm gì trong một tình huống cụ thể thì đều phải đối chiếu với cuốn luật này.
+
+Được gọi là "nguồn dữ liệu chuẩn duy nhất" -> Nếu hệ thống có tranh cãi, hệ thống sẽ đối chiếu khung danh sách này.
+
+Có hai loại luật được thiết lập:
+
+- **Cloosed-loop (Vòng lặp kín)**: Quy định một chu trình tự động hóa hoàn chỉnh, tự cung cấp về mặt thông tin và hành động -> Hệ thống sẽ được **ủy quyền toàn phần** để xử lý các vấn đề từ đầu đến cuối mà không cần xin phép quản trị viên.
+- 
+	1. *Nhận diện* (Detect): Hệ thống liên tục thu thập dữ liệu và phát hiện trạng thái sai lệch so với tiêu chuẩn.
+	2. *Phân tích* (Analyze): Đối chiếu luồng dữ liệu đó với các quy tắc/điểu kiện trong Policy Framework
+	3. *Quyết định (Decide)*: Policy chọn ra một hành động duy nhất, khớp với điều kiện.
+	4. *Thực thi (Act)*: Hệ thống lập tức đẩy lệnh xuống các bộ phận bên dưới để chạy các hành động đó
+	5. Phản hồi (Feedback): Đây là bước quan trọng nhất để tạo nên chữ "kín". Sau khi hành động diễn ra, hệ thống tự động đo lường lại môi trường xem trạng thái đã trở về chuẩn chưa. Nếu chưa, nó sẽ tiếp tục vòng lặp này.
+
+	-> Không có "độ trễ" do chờ đợi quyết định từ bên ngoái. Dữ liệu đầu ra (Kết quả của hành động) ngay lập tức trở thành dữ liệu đầu vào cho chu kỳ xử lý tiếp theo.
+
+- **Open-loop (vòng lặp mở)**: Là một chu trình tự động hóa bị "ngặt quãng. Hệ thống sẽ chỉ đóng vai trò là một **trợ lý phân tích**, quyền quyết định cao nhất sẽ không giao cho máy móc mà thuộc về một tác nhân độc lập bên ngoài (chủ yếu là con người).
+
+	1. *Nhận diện (Detect):* Thu thập dữ liệu và phát hiện bất thường tương tự như trên.
+	2. *Phân tích (Analyze):* Đối chiếu với Policy Framework.
+	3. *Cảnh báo / Đề xuất (Alert/Recommend):* Thay vì trực tiếp ra lệnh thực thi, Policy chuyển đổi kết quả phân tích thành các thông báo, hoặc đề xuất một danh sách các phương án giải quyết.
+	4. *Chờ đợi (Wait):* Chu trình tự động của hệ thống dừng lại tại đây. Luồng kiểm soát bị "mở".
+	5. *Tác động ngoại vi (External Intervention):* Tác nhân bên ngoài tiếp nhận thông tin, dùng phán đoán độc lập để đánh giá và tự tay kích hoạt lệnh thực thi cuối cùng (hoặc chọn bỏ qua).
+
+	-> Thiếu đi cơ chế tự phản hồi và tự hành động (no automated feedback action). Chu trình không thể tự hoàn tất nếu không có sự can thiệp từ "đầu vào" của bên thứ ba.
 
 ### 4. SO (Service Orchestration) 
 
 ![SO service flow](/images/kien-truc-onap/image-5.png)
 
-**SO (Service Orchestrator)** giống như ông quản đốc trong một công trình xây dựng. Chuyên môn của module này là "chỉ tay năm ngón" và quản lý tiến độ.
+**SO (Service Orchestrator)** giống như ông quản đốc công trường. Chuyên môn của module này là "chỉ tay năm ngón" và quản lý tiến độ.
+
+Các nhiệm vụ triển khai và quản lý đều phải dựa trên Policy Framework.
 
 Ví dụ:
 - Khách hàng lên giao diện UUI bấm nút: "Ê, triển khai cho t một cái mạng lõi 5G". Lệnh này sẽ được ném thẳng xuống cho SO.
 - SO nhận kèo, nhưng nó sẽ không tự đi cài máy ảo hay đi dây mạng. Nó sẽ mở "bản vẽ kỹ thuật" lấy từ SDC ra xem mạng 5G này cần những thành phần gì.
+- Khi SO xem bản vẽ kỹ thuật và biết cần triển khai một máy chủ ảo, nó sẽ gặp một vấn đề: "Trong kho (AAI) có 10 cái server trống, vậy nên đặt vào cái nào?". Lúc này, SO không tự quyết. Nó sẽ gửi một yêu cầu tới một bộ phận trung gian (thường là OOF - Optimization Framework), và bộ phận này sẽ "tra cứu" **Policy Framework**.
 - SO sau đó sẽ bắt đầu sai vặt đệ tử, điều phối các module bên dưới làm việc theo đúng thứ tự:
 	- Gọi AAI: "Kho đang còn bao nhiêu server trống? Mạng dải IP nào đang rảnh để tao dùng?"
 	- Gọi VFC: "Lấy tài nguyên ra spin-up cho tao mấy cái máy ảo chạy dịch vụ đi."
